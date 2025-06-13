@@ -7,8 +7,6 @@ def assignment(new_list, new_index, old_list, old_index):
 def merge_sort(list_to_sort_by_merge):
     if (
         len(list_to_sort_by_merge) > 1
-        and not len(list_to_sort_by_merge) < 1
-        and len(list_to_sort_by_merge) != 0
     ):
         midpoint = len(list_to_sort_by_merge) // 2
         left_list = list_to_sort_by_merge[:midpoint]
@@ -46,6 +44,6 @@ x_values = range(len(my_list))
 plt.plot(x_values, my_list)
 plt.show()
 merge_sort(my_list)
-x = range(len(my_list))
+x_values = range(len(my_list))
 plt.plot(x_values, my_list)
 plt.show()
