@@ -1,10 +1,30 @@
 import matplotlib.pyplot as plt
 
 def assignment(new_list, new_index, old_list, old_index):
+    """
+    Weist einen Wert von einer Liste zu einer anderen zu.
+    
+    Args:
+        new_list: Zielliste
+        new_index: Index in der Zielliste
+        old_list: Quellliste
+        old_index: Index in der Quellliste
+    """
     new_list[new_index] = old_list[old_index]
 
 
 def merge_sort(list_to_sort_by_merge):
+    """
+    Sortiert eine Liste mit dem Merge-Sort-Algorithmus.
+    
+    Args:
+        list_to_sort_by_merge: Die zu sortierende Liste
+        
+    Returns:
+        Die sortierte Liste
+    """
+    if not isinstance(list_to_sort_by_merge, list):
+        raise TypeError("Input muss eine Liste sein")
     if (
         len(list_to_sort_by_merge) > 1
     ):
