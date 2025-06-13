@@ -21,20 +21,40 @@ def merge_sort(list_to_sort_by_merge):
 
         while left_index < len(left_list) and right_index < len(right_list):
             if left_list[left_index] <= right_list[right_index]:
-                assignment(new_list=list_to_sort_by_merge, new_index=sorted_index, old_list=left_list, old_index=left_index)
+                assignment(
+                    new_list=list_to_sort_by_merge, 
+                    new_index=sorted_index, 
+                    old_list=left_list, 
+                    old_index=left_index
+                )
                 left_index += 1
             else:
-                assignment(new_list=list_to_sort_by_merge, new_index=sorted_index, old_list=right_list, old_index=right_index)
+                assignment(
+                    new_list=list_to_sort_by_merge, 
+                    new_index=sorted_index, 
+                    old_list=right_list, 
+                    old_index=right_index
+                )
                 right_index += 1
             sorted_index += 1
 
         while left_index < len(left_list):
-            list_to_sort_by_merge[sorted_index] = left_list[left_index]
+            assignment(
+                new_list=list_to_sort_by_merge, 
+                new_index=sorted_index, 
+                old_list=left_list, 
+                old_index=left_index
+            )
             left_index += 1
             sorted_index += 1
 
         while right_index < len(right_list):
-            list_to_sort_by_merge[sorted_index] = right_list[right_index]
+            assignment(
+                new_list=list_to_sort_by_merge, 
+                new_index=sorted_index, 
+                old_list=right_list, 
+                old_index=right_index
+            )
             right_index += 1
             sorted_index += 1
 
