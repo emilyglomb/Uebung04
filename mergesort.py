@@ -87,16 +87,21 @@ def merge_sort(list_to_sort_by_merge):
             right_index += 1
             sorted_index += 1
 
-# Liste wird mit Werten sortiert und eine weitere Liste, x_values, wird erstellt,
-# sodass diese die einzelnen Indizes der andren Liste enthält. Ein Plot wird erstellt 
-# welcher die Liste als y-Werte animmt und die x_values als x-Werte
-my_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
-x_values = range(len(my_list))
-plt.plot(x_values, my_list)
-plt.show()
 
-# Die Liste wird sortiert und es wird erneut ein Plot erstellt
-merge_sort(my_list)
+my_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+sorted_list = my_list.copy()
+merge_sort(sorted_list)
 x_values = range(len(my_list))
-plt.plot(x_values, my_list)
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+ax1.plot(x_values, my_list, 'ro-', linewidth=2, markersize=6)
+ax1.set_title("Original Data")
+ax1.set_xlabel('Index', fontsize=12)
+ax1.set_ylabel('Value', fontsize=12)
+ax1.spines[['top', 'right']].set_visible(False)
+ax2.plot(x_values, sorted_list, 'go-', linewidth=2, markersize=6)
+ax2.set_title("Sorted Data")
+ax2.set_xlabel('Index', fontsize=12)
+ax2.set_ylabel('Value', fontsize=12)
+ax2.spines[['top', 'right']].set_visible(False)
 plt.show()
